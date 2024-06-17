@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Y.GG</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="./YG2.css">
+    <link rel="stylesheet" href="./chart.css">
+    <link rel="shortcut icon" href="./YGG로고.png">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="/YG/index.html"><img src="/YG/YGG찐찐로고.png" alt="Logo" id="mainLogo" herf=""></a>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="/YG/index.html">Home</a></li>
+                <li><a href="https://statiz.sporki.com/schedule/" target="_blank">Schedule</a></li>
+                <li><a href="https://statiz.sporki.com/team/" target="_blank">Teams</a></li>
+                <li><a href="https://statiz.sporki.com/player/" target="_blank">Players</a></li>
+                <li><a href="#">Analysis</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <canvas id="myChart-bar" width="300" height="100"></canvas>
+    <canvas id="myChart" width="300" height="100"></canvas>
+    <canvas id="myChart1" width="300" height="100"></canvas>
+    <canvas id="myChart2" width="300" height="100"></canvas>
+    <canvas id="myChart3" width="300" height="100"></canvas>
+    <script>
+
+        // 데이터 설정
+        const labels4 = ['경기', '승', '무', '패', '승률', '득점', '홈런', '도루', '타율'];
+        const data4 = {
+            labels: labels4,
+            datasets: [{
+                label: '2024년도 KIA 통계표',
+                data: [70, 41, 1, 28, 56.4, 396, 76, 69, 28.9],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.9)',
+                    'rgba(255, 159, 64, 0.9)',
+                    'rgba(255, 205, 86, 0.9)',
+                    'rgba(75, 192, 192, 0.9)',
+                    'rgba(54, 162, 235, 0.9)',
+                    'rgba(153, 102, 255, 0.9)',
+                    'rgba(201, 203, 207, 0.9)'
+                ],
+                borderColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(255, 159, 64)',
+                    'rgb(255, 205, 86)',
+                    'rgb(75, 192, 192)',
+                    'rgb(54, 162, 235)',
+                    'rgb(153, 102, 255)',
+                    'rgb(201, 203, 207)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        // 차트 설정
+        const config4 = {
+            type: 'bar',
+            data: data4,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        };
+
+        // 차트 생성
+        var myChart4 = new Chart(
+            document.getElementById('myChart-bar'),
+            config4
+        );
+
+        // 데이터 설정
+        const labels = ['경기', '승', '무', '패', '승률', '득점', '홈런', '도루', '타율'];
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: '2024년도 KIA 종합점수',
+                data: [70, 41, 1, 28, 59.4, 396, 76, 69, 28.9],
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+            }]
+        };
+
+        // 차트 설정
+        const config = {
+            type: 'line',
+            data: data,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        };
+
+        // 차트 생성
+        var myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+
+
+        // 데이터 설정
+        const labels1 = ['경기', '승', '무', '패', '승률', '득점', '홈런', '도루', '타율'];
+        const data1 = {
+            labels: labels1,
+            datasets: [{
+                label: '2024년도 두산 종합점수',
+                data: [73, 40, 2, 31, 56.3, 394, 72, 90, 28.1],
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+            }]
+        };
+
+        // 차트 설정
+        const config1 = {
+            type: 'line',
+            data: data1,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        };
+
+        // 차트 생성
+        var myChart = new Chart(
+            document.getElementById('myChart1'),
+            config1
+        );
+        // 데이터 설정
+        const labels2 = ['경기', '승', '무', '패', '승률', '득점', '홈런', '도루', '타율'];
+        const data2 = {
+            labels: labels2,
+            datasets: [{
+                label: '2024년도 한화 종합점수',
+                data: [69, 30, 2, 37, 44.8, 356, 60, 38, 27.0],
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+            }]
+        };
+
+        // 차트 설정
+        const config2 = {
+            type: 'line',
+            data: data2,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        };
+
+        // 차트 생성
+        var myChart = new Chart(
+            document.getElementById('myChart2'),
+            config2
+        );
+        // 데이터 설정
+        const labels3 = ['경기', '승', '무', '패', '승률', '득점', '홈런', '도루', '타율'];
+        const data3 = {
+            labels: labels3,
+            datasets: [{
+                label: '2024년도 NC 종합점수',
+                data: [70, 34, 2, 34, 50.0, 365, 78, 59, 27.2],
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+            }]
+        };
+
+        // 차트 설정
+        const config3 = {
+            type: 'line',
+            data: data3,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        };
+
+        // 차트 생성
+        var myChart = new Chart(
+            document.getElementById('myChart3'),
+            config3
+        );
+    </script>
+</body>
+
+</html>
